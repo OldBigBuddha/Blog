@@ -7,7 +7,7 @@ block content
   article.content__post
     h1.post__title= page.title
     .post__date= page.date.format(config.date_format)
-    section !{page.content}
+    section!= page.content
     if page.tags
       .post__tags
         for tag in page.tags.toArray()
