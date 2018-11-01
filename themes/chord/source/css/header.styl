@@ -1,0 +1,34 @@
+header
+  width 100%
+
+.header
+  width 80%
+  height 15rem
+  display flex
+  flex-direction column
+  align-items center
+  margin 0 auto
+  .site__name
+    display flex
+    align-items center
+
+  .menu
+    display flex
+    align-items center
+    .menu__item
+      font-size 2rem
+      a
+        display inline-block
+        padding 3px 15px
+        font-size 1.8rem
+        background-color #1FAE89
+        color #fff
+        border-radius 20px 0 20px 0
+        box-shadow 0 3px 0px #0D7377
+        font-weight bold
+
+@media screen and (max-width: 480px)
+  .header
+    .menu
+      .menu__item
+        margin-left 10px
