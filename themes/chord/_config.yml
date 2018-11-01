@@ -1,7 +1,7 @@
-since: 2014 ## 站点起始时间
+since: 2018 ## 站点起始时间
 logo: images/logo.png ## logo 图片
-duoshuo: chordblog ## Your duoshuo_shortname
-ga: UA-62344719-1 ## Your Google Analytics tracking id
+duoshuo: Simple is Best ## Your duoshuo_shortname
+ga: ## Your Google Analytics tracking id
 menu:
   - page: home
     directory: /
