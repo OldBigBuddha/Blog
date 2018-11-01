@@ -13,7 +13,3 @@ block content
         for tag in page.tags.toArray()
           a(href=url_for(tag.path))= tag.name
   include _partial/paginator_post
-
-
-block comment
-  include _partial/comment
