@@ -1,0 +1,27 @@
+head
+  meta(charset="UTF-8")
+  meta(http-equiv="X-UA-Compatible", content="IE=edge")
+  meta(name="viewport", content="width=device-width, initial-scale=1.0, user-scalable=0")
+  meta(name="format-detection", content="telephone=no")
+
+  meta(name="description", content=config.description)
+  meta(name="author", content=config.author)
+
+  meta(property="og:site_name", content=config.title)
+  meta(property="og:title", content=page.title)
+  meta(property="og:description", content=config.description)
+  meta(property="og:type", content="website")
+  meta(property="og:url", content=page.link)
+  //- meta(property="og:image", content="#")
+  //- meta(property="fb:app_id", content="#")
+
+  //- meta(name="twitter:card", content="summary")
+  //- meta(name="twitter:site", content="サイトのURL貼る")
+  //- meta(name="twitter:image", content="ogpのURL貼る")
+
+  block title
+
+  link(rel="stylesheet", href=url_for("/css/normailze.css"))
+  link(rel="stylesheet", href=url_for("/css/style.css"))
+
+  link(rel="shortcut icon", type="image/x-icon", href="/favicon.ico")
