@@ -3,19 +3,19 @@
 ## Source: https://github.com/hexojs/hexo/
 
 # Site
-title: Hexo
+title: Simple is Best
 subtitle:
-description:
+description: 京都産のプログラマがわからなかったことをメモする技術系のポエム集(?)
 keywords:
-author: John Doe
-language:
-timezone:
+author: OldBigBuddha
+language: ja
+timezone: Asia/Tokyo
 
 # URL
 ## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
-url: http://yoursite.com
+url: https://blog.oldbigbuddha.net/
 root: /
-permalink: :year/:month/:day/:title/
+permalink: post/:title/
 permalink_defaults:
 
 # Directory
@@ -63,7 +63,7 @@ tag_map:
 ## You can customize the date format as defined in
 ## http://momentjs.com/docs/#/displaying/format/
 date_format: YYYY-MM-DD
-time_format: HH:mm:ss
+time_format: HH:mm
 
 # Pagination
 ## Set per_page to 0 to disable pagination
