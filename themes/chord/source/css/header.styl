@@ -1,31 +1,23 @@
 header
   width 100%
 
-.header
-  width 80%
-  height 15rem
-  display flex
-  flex-direction column
-  align-items center
+nav.header
+  width 100%
   margin 0 auto
-  .site__name
-    display flex
-    align-items center
+  background-color #000
 
   .menu
+    width 100%
     display flex
-    align-items center
+    flex-direction row
+    justify-content space-around
     .menu__item
+      align-items stretch
       font-size 2rem
       a
-        display inline-block
-        padding 3px 15px
-        font-size 1.8rem
-        background-color #1FAE89
+        padding 8px
+        font-size 1.5rem
         color #fff
-        border-radius 20px 0 20px 0
-        box-shadow 0 3px 0px #0D7377
-        font-weight bold
 
 @media screen and (max-width: 480px)
   .header

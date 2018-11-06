@@ -5,16 +5,14 @@ html(lang=config.language)
   include ./head.pug
   body
     <!--[if ltg IE 9]><div>是时候换个现代浏览器了，点击更换<a href="http://browsehappy.com/"></a></div><!--<![endif]-->
-    header
-      include nav
+    include ./header.pug
+
     section.content
       block content
       block pagination
-    section.comment
-      block comment
-    footer
-    include copyright
-    include scripts
+
+    include ./footer.pug
+    include ./scripts.pug
 
     //- if theme.ga
     //-   script.
