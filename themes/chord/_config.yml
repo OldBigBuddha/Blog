@@ -10,3 +10,5 @@ menu:
     directory: about/
   - page: Contact
     directory: contact/
+  - page: Privacy Policy
+    directory: privacypolicy/
