@@ -8,5 +8,5 @@ menu:
     directory: archives/
   - page: about
     directory: about/
-  - page: rss
-    directory: atom.xml
+  - page: Contact
+    directory: contact/
