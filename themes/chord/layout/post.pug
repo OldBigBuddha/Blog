@@ -7,6 +7,9 @@ block content
   article.content__post
     h1.post__title= page.title
     .post__date= page.date.format(config.date_format)
+
+    hr
+
     section!= page.content
     if page.tags
       .post__tags
