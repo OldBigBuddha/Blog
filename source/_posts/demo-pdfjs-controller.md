@@ -1,5 +1,5 @@
 ---
-title: demo-pdfjs-controller
+title: pdfjs-controllerのDemoを動かすのに手こずった話
 date: 2018-11-07 19:42:49
 tags:
   - JavaScript
