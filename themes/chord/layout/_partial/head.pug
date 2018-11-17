@@ -10,7 +10,12 @@ head
   meta(property="og:site_name", content=config.title)
   meta(property="og:title", content=page.title)
   meta(property="og:description", content=config.description)
-  meta(property="og:type", content="website")
+
+  if page.layout === "post"
+    meta(property="og:type", content="article")
+  else
+    meta(property="og:type", content="website")
+
   meta(property="og:url", content=page.link)
   //- meta(property="og:image", content="#")
   //- meta(property="fb:app_id", content="#")
