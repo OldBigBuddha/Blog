@@ -1,4 +1,4 @@
-head
+head(prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb# article: http://ogp.me/ns/article#")
   meta(charset="UTF-8")
   meta(http-equiv="X-UA-Compatible", content="IE=edge")
   meta(name="viewport", content="width=device-width, initial-scale=1.0, user-scalable=0")
@@ -8,16 +8,25 @@ head
   meta(name="author", content=config.author)
 
   meta(property="og:site_name", content=config.title)
-  meta(property="og:title", content=page.title)
-  meta(property="og:description", content=config.description)
-  meta(property="og:type", content="website")
-  meta(property="og:url", content=page.link)
-  //- meta(property="og:image", content="#")
-  //- meta(property="fb:app_id", content="#")
+  if page.title
+    meta(property="og:title", content=page.title)
+  else
+    meta(property="og:title", content="Home")
 
-  //- meta(name="twitter:card", content="summary")
-  //- meta(name="twitter:site", content="サイトのURL貼る")
-  //- meta(name="twitter:image", content="ogpのURL貼る")
+  meta(property="og:description", content=config.description)
+
+  if page.layout === "post"
+    meta(property="og:type", content="article")
+  else
+    meta(property="og:type", content="website")
+
+  meta(property="og:url", content=page.link)
+  meta(property="og:image", content="https://blog.oldbigbuddha.net/images/ogp.png")
+
+  meta(property="fb:app_id", content="2154307747924530")
+
+  meta(name="twitter:card", content="summary")
+  meta(name="twitter:creator", content="@OJI_1941")
 
   block title
 
