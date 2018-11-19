@@ -20,7 +20,7 @@ head(prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb# article: http://ogp.
   else
     meta(property="og:type", content="website")
 
-  meta(property="og:url", content=page.link)
+  meta(property="og:url", content=url_for(page.path))
   meta(property="og:image", content="https://blog.oldbigbuddha.net/images/ogp/ogp.png")
 
   meta(property="fb:app_id", content="2154307747924530")
