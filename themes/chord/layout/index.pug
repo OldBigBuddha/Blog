@@ -1,4 +1,4 @@
-extends _partial/layout
+extends _include/layout
 
 block title
   title= config.title
@@ -32,4 +32,4 @@ block content
                   a(href=url_for(tag.path))= tag.name
 
 block pagination
-  include _partial/paginator
+  include _include/paginator
