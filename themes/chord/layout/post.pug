@@ -1,4 +1,4 @@
-extends _partial/layout
+extends _include/layout
 
 block title
   title= `${page.title} | ${config.title}`
@@ -11,8 +11,13 @@ block content
     hr
 
     section!= page.content
+
+    hr
+
+    p Tags
     if page.tags
       .post__tags
-        for tag in page.tags.toArray()
-          a(href=url_for(tag.path))= tag.name
-  include _partial/paginator_post
+        ul
+          for tag in page.tags.toArray()
+            li: a(href=url_for(tag.path))= tag.name
+  include _include/paginator_post

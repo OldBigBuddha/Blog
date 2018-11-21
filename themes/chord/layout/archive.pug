@@ -1,4 +1,4 @@
-extends _partial/layout
+extends _include/layout
 
 block title
   if page.category
@@ -17,4 +17,4 @@ block content
           li
             span.achive__item__date= post.date.format('YYYY/MM/DD')
             a(href=url_for(post.path), title=post.title)= post.title
-  include _partial/paginator
+  include _include/paginator

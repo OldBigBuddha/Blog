@@ -2,12 +2,10 @@ since: 2018 ## 站点起始时间
 logo: images/logo.png ## logo 图片
 ga: ## Your Google Analytics tracking id
 menu:
-  - page: home
-    directory: /
-  - page: archive
-    directory: archives/
   - page: about
     directory: about/
+  - page: archive
+    directory: archives/
   - page: Contact
     directory: contact/
   - page: Privacy Policy
