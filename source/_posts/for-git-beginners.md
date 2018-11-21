@@ -1,6 +1,6 @@
 ---
 title: 何も考えずにGitでaddしてcommitしてpushしてるだけのあなたへ
-date: 2018-11-16 00:00:00
+date: 2018-12-01 00:00:00
 category: technology
 tags:
   - git
