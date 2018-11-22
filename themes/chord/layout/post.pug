@@ -14,10 +14,22 @@ block content
 
     hr
 
-    p Tags
     if page.tags
       .post__tags
+        p Tags
         ul
           for tag in page.tags.toArray()
             li: a(href=url_for(tag.path))= tag.name
+
+    // Share ボタン
+    .share
+      .button
+        i.fab.fa-twitter
+      .button
+        i.fab.fa-facebook
+      .button
+        i.fab.fa-google-plus-g
+      .button
+        i.fas.fa-link
+
   include _include/paginator_post
