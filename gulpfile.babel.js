@@ -7,23 +7,27 @@ import Hexo from 'hexo';
 
 const hexo = new Hexo(process.cwd(), {});
 
-const clean = () => del(["public/**/*"]);
+const clean = done => {
+  del(["public/**/*"]);
+  done();
+}
 
-const generate = () => {
-  return hexo.init().then(() => {
-    return hexo.call('generate', {
+const generate = done => {
+  hexo.init().then(() => {
+    hexo.call('generate', {
         watch: false
     });
   })
   .then(() => hexo.exit())
   .catch(err => {
-      console.log(err);
-      return hexo.exit(err);
+      console.error(err);
+      hexo.exit(err);
   });
+  done();
 };
 
-const formatCSS = () => {
-  return gulp.src(["./public/css/**/*.css"])
+const formatCSS = done => {
+  gulp.src(["./public/css/**/*.css"])
     .pipe(autoprefixer({
       browsers: [
         "last 2 version",
@@ -34,11 +38,13 @@ const formatCSS = () => {
     }))
     .pipe(cleanCss())
     .pipe(gulp.dest("./public/css"));
+    done();
 };
 
-const copy = () => {
+const copy = done => {
   return gulp.src("./underscores/*")
   .pipe(gulp.dest("./public"));
+  done();
 };
 
-export default gulp.series([clean, generate, gulp.parallel(formatCSS, copy)])();
+gulp.task("default", gulp.series(clean, generate, gulp.parallel([formatCSS, copy])));
