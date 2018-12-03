@@ -26,7 +26,7 @@ const generate = done => {
   done();
 };
 
-const formatCSS = () => {
+const formatCSS = done => {
   gulp.src(["./public/css/**/*.css"])
     .pipe(autoprefixer({
       browsers: [
@@ -47,14 +47,4 @@ const copy = done => {
   done();
 };
 
-exports.default = done => {
-  gulp.series(
-    clean,
-    generate,
-    gulp.parallel(
-      formatCSS,
-      copy
-    )
-  );
-  done();
-}
+gulp.task("default", gulp.series(clean, generate, gulp.parallel([formatCSS, copy])));
