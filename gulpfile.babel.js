@@ -26,7 +26,11 @@ const generate = done => {
   done();
 };
 
+<<<<<<< HEAD
 const formatCSS = done => {
+=======
+const formatCSS = () => {
+>>>>>>> [update] gulpfile.babel.js
   gulp.src(["./public/css/**/*.css"])
     .pipe(autoprefixer({
       browsers: [
