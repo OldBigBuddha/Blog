@@ -3,6 +3,7 @@ const twitter = document.getElementById("twitter");
 const facebook = document.getElementById("facebook");
 const hatebu = document.getElementById("hatebu");
 const link = document.getElementById("link");
+const notification = document.getElementById("notification");
 
 const share = (size, url) => {
   window.open(url, "_blank", size);
@@ -31,4 +32,8 @@ link.addEventListener("click", () => {
   document.execCommand('copy');
 
   bodyElm.removeChild(temp);
+  notification.style.display = "block";
+  setTimeout(() => {
+    notification.style.display = "none";
+  }, 1500);
 });

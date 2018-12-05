@@ -22,7 +22,7 @@ block content
             li: a(href=url_for(tag.path))= tag.name
 
     // Share ボタン
-    .share
+    #share
       .button#twitter
         i.fab.fa-twitter
       .button#facebook
@@ -31,6 +31,9 @@ block content
         img(src=url_for("/images/hatenabookmark.svg"))
       .button#link
         i.fas.fa-link
+
+    #notification
+      p URLをクリップボードにコピーしました。
 
   include _include/paginator_post
 
