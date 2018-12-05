@@ -1,9 +1,17 @@
 const title = document.getElementsByClassName("post__title")[0].textContent;
 const twitter = document.getElementById("twitter");
+const facebook = document.getElementById("facebook");
+const hatebu = document.getElementById("hatebu");
+const link = document.getElementById("link");
+
+const share = (size, url) => {
+  window.open(url, "_blank", size);
+}
 
 twitter.addEventListener("click", () => {
-  //処理
-  const size = "menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=400, width=600";
-  const url = "//twitter.com/share?url=" + location.href;
-  window.open(url, "_blank", size);
+  share("menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=400, width=600", "//twitter.com/share?url=" + location.href);
+}, false);
+
+facebook.addEventListener("click", () => {
+  share("menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=800, width=600", "//www.facebook.com/sharer.php?src=bm&u=" + location.href + "&t=" + title);
 }, false);
