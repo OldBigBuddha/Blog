@@ -15,3 +15,20 @@ twitter.addEventListener("click", () => {
 facebook.addEventListener("click", () => {
   share("menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=800, width=600", "//www.facebook.com/sharer.php?src=bm&u=" + location.href + "&t=" + title);
 }, false);
+
+hatebu.addEventListener("click", () => {
+  share("menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=600, width=1000", "//b.hatena.ne.jp/entry/" + location.href);
+});
+
+link.addEventListener("click", () => {
+  const temp = document.createElement("textarea");
+  temp.textContent = location.href;
+
+  const bodyElm = document.getElementsByTagName("body")[0];
+  bodyElm.appendChild(temp);
+
+  temp.select();
+  document.execCommand('copy');
+
+  bodyElm.removeChild(temp);
+});
