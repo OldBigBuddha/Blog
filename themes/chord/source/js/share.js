@@ -11,14 +11,17 @@ const share = (size, url) => {
 
 twitter.addEventListener("click", () => {
   share("menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=400, width=600", "//twitter.com/share?url=" + location.href);
+  ga("send", "social", "twitter", "share", location.href);
 }, false);
 
 facebook.addEventListener("click", () => {
   share("menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=800, width=600", "//www.facebook.com/sharer.php?src=bm&u=" + location.href + "&t=" + title);
+  ga("send", "social", "facebook", "share", location.href);
 }, false);
 
 hatebu.addEventListener("click", () => {
   share("menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=600, width=1000", "//b.hatena.ne.jp/entry/" + location.href);
+  ga("send", "social", "hatena-bookmark", "bookmark", location.href);
 });
 
 link.addEventListener("click", () => {
@@ -33,6 +36,7 @@ link.addEventListener("click", () => {
 
   bodyElm.removeChild(temp);
   notification.style.display = "block";
+  ga("send", "social", "link", "copy", location.href);
   setTimeout(() => {
     notification.style.display = "none";
   }, 1500);
