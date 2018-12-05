@@ -23,13 +23,13 @@ block content
 
     // Share ボタン
     .share
-      .button
+      .button#twitter
         i.fab.fa-twitter
-      .button
+      .button#facebook
         i.fab.fa-facebook
-      .button
-        img(src=url_for("/images/hatebu.png"))
-      .button
+      .button#hatebu
+        img(src=url_for("/images/hatenabookmark.svg"))
+      .button#link
         i.fas.fa-link
 
   include _include/paginator_post
