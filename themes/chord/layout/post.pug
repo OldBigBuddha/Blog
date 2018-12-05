@@ -14,10 +14,27 @@ block content
 
     hr
 
-    p Tags
     if page.tags
       .post__tags
+        p Tags
         ul
           for tag in page.tags.toArray()
             li: a(href=url_for(tag.path))= tag.name
+
+    // Share ボタン
+    #share
+      .button#twitter
+        i.fab.fa-twitter
+      .button#facebook
+        i.fab.fa-facebook
+      .button#hatebu
+        img(src=url_for("/images/hatenabookmark.svg"))
+      .button#link
+        i.fas.fa-link
+
+    #notification
+      p URLをクリップボードにコピーしました。
+
   include _include/paginator_post
+
+  script(src=url_for("/js/share.js"))
