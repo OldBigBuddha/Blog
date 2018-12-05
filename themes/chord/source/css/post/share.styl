@@ -1,6 +1,6 @@
 .share
   display flex
-  justify-content space-evenly
+  justify-content space-between
   padding 4px
   width 100%
   cursor pointer
@@ -16,12 +16,16 @@
   &:hover
     background-color black
     color white
+  i
+    flex 0 1 auto
+    margin auto
 
+#hatebu
   img
+    fill #000
     display block
     width 20px
     flex 0 1 auto
     margin auto
-  i
-    flex 0 1 auto
-    margin auto
+    &:hover
+      fill #fff
