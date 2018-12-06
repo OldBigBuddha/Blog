@@ -26,15 +26,7 @@ const generate = done => {
   done();
 };
 
-<<<<<<< HEAD
-<<<<<<< HEAD
 const formatCSS = done => {
-=======
-const formatCSS = () => {
->>>>>>> [update] gulpfile.babel.js
-=======
-const formatCSS = done => {
->>>>>>> [fix] forget done() in task:cleanCss
   gulp.src(["./public/css/**/*.css"])
     .pipe(autoprefixer({
       browsers: [
