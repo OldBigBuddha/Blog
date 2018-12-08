@@ -38,3 +38,27 @@ $ hexo deploy
 ```
 
 More info: [Deployment](https://hexo.io/docs/deployment.html)
+
+## Style check
+
+# Heading 1
+
+## Heading 2
+
+**Bold**
+
+_Italic_
+
+~~Strike~~
+
+- non-numbering
+- non-numbering
+- non-numbering
+- non-numbering
+- non-numbering
+
+1. numbering
+1. numbering
+1. numbering
+1. numbering
+1. numbering
