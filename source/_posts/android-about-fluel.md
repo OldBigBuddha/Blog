@@ -1,6 +1,6 @@
 ---
 title: Fuelを使ってWebAPIを叩こう
-date: 2018-12-06 22:09:13
+date: 2018-12-05
 categories: Android
 tags:
   - [Kotlin]
