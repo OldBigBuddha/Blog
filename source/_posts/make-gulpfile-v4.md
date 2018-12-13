@@ -1,5 +1,5 @@
 ---
-title: make-gulpfile-v4
+title: Gulpfileをナウく書きたい
 date: 2018-12-15
 tags:
   - [JavaScript]
