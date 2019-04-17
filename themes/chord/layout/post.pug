@@ -2,6 +2,10 @@ extends _include/layout
 
 block title
   title= `${page.title} | ${config.title}`
+  link(rel="stylesheet", href=url_for("/css/post/post.css"))
+  link(rel="stylesheet", href=url_for("/css/post/share.css"))
+  link(rel="stylesheet", href=url_for("/css/post/tag.css"))
+
 
 block content
   article.content__post

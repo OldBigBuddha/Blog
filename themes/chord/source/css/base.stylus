@@ -1,0 +1,15 @@
+/*=========
+  Page Style
+=========*/
+
+section.content
+  width 800px
+  margin 50px auto 50px
+
+@media screen and (max-width: 800px) and (min-width: 480px)
+  .content
+    width 90%
+
+@media screen and (max-width: 480px)
+  .content
+    width 90%
