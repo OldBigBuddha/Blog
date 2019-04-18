@@ -1,9 +1,9 @@
 # redirect netlify sitename to your sitename for SEO purposes,
 # to avoid duplicate content.  Do this for http and https
-http://simpleisbest.netlify.com/* https://blog.oldbigbuddha.net/:splat 301!
-https://simpleisbest.netlify.com/* https://blog.oldbigbuddha.net/:splat 301!
+http://simpleisbest.netlify.com/* https://oldbigbuddha.dev/:splat 301!
+https://simpleisbest.netlify.com/* https://oldbigbuddha.dev/:splat 301!
 
-http://blog.oldbigbuddha.net/* https://blog.oldbigbuddha.net/:splat 301!
+http://oldbigbuddha.dev/* https://oldbigbuddha.dev/:splat 301!
 
-http://moikka.media/* https://blog.oldbigbuddha.net/:splat 301!
-https://moikka.media/* https://blog.oldbigbuddha.net/:splat 301!
+http://blog.oldbigbuddha.net/* https://oldbigbuddha.dev/:splat 301!
+https://blog.oldbigbuddha.net/* https://oldbigbuddha.dev/:splat 301!
