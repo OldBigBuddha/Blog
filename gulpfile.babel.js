@@ -41,10 +41,4 @@ const formatCSS = done => {
     done();
 };
 
-const copy = done => {
-  return gulp.src("./underscores/*")
-  .pipe(gulp.dest("./public"));
-  done();
-};
-
-gulp.task("default", gulp.series(clean, generate, gulp.parallel([formatCSS, copy])));
+gulp.task("default", gulp.series(clean, generate, formatCSS));
