@@ -3,7 +3,12 @@
     command = "hexo generate"
 
 [[redirects]]
-    from = "http*://simpleisbest.netlify.com/*"
+    from = "http://simpleisbest.netlify.com/*"
+    to = "https://oldbigbuddha.dev/:splat"
+    forcus = true
+
+[[redirects]]
+    from = "https://simpleisbest.netlify.com/*"
     to = "https://oldbigbuddha.dev/:splat"
     forcus = true
 
@@ -13,7 +18,12 @@
     forcus = true
 
 [[redirects]]
-    from = "http*//blog.oldbigbuddha.net/*"
+    from = "http://blog.oldbigbuddha.net/*"
+    to = "https://oldbigbuddha.dev/:splat"
+    forcus = true
+
+[[redirects]]
+    from = "https://blog.oldbigbuddha.net/*"
     to = "https://oldbigbuddha.dev/:splat"
     forcus = true
 
