@@ -1,5 +1,5 @@
 # Blog
-「[Simple is Best](https://blog.oldbigbuddha.net/)」のソースコードです。
+「[Simple is Best](https://oldbigbuddha.dev/)」のソースコードです。
 
 [![Netlify Status](https://api.netlify.com/api/v1/badges/51e8d1e6-596c-4582-8ea5-97a7667bc63c/deploy-status)](https://app.netlify.com/sites/simpleisbest/deploys)
 
