@@ -70,4 +70,4 @@ https://api.roppo-json.dev/v1/constitution/9
 
 以上です、ありがとうございました。
 
-僕の Twitter: [@OJI_1941](https://twitter.com/OJI_1941)
+僕の Twitter: [@OldBigBuddha](https://twitter.com/OldBigBuddha)
