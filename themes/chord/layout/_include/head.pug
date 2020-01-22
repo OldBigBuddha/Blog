@@ -33,16 +33,19 @@ head(prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb# article: http://ogp.
 
   link(rel="stylesheet", href="https://unpkg.com/ress/dist/ress.min.css")
   link(rel="stylesheet", href="https://use.fontawesome.com/releases/v5.5.0/css/all.css", integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU", crossorigin="anonymous")
-  link(rel="stylesheet", href=url_for("/css/font.css"))
+  //- link(rel="stylesheet", href=url_for("/css/font.css"))
   link(rel="stylesheet", href=url_for("/css/base.css"))
-  link(rel="stylesheet", href=url_for("/css/style.css"))
-  link(rel="stylesheet", href=url_for("/css/header.css"))
-  link(rel="stylesheet", href=url_for("/css/footer.css"))
+  link(rel="stylesheet", href=url_for("/css/component/header.css"))
+  link(rel="stylesheet", href=url_for("/css/component/footer.css"))
+
+  block style
 
   link(rel="shortcut icon", type="image/x-icon", href="/favicon.ico")
 
   script(src='https://www.googletagmanager.com/gtag/js?id=UA-128941201-1', async)
   script(src='//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js', async)
   script.
-    window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date),gtag('config','UA-128941201-1');
-    (adsbygoogle=window.adsbygoogle||[]).push({google_ad_client:"ca-pub-2427798032219417",enable_page_level_ads:true});
+    // Adobe Font
+    !function(e){var t,a={kitId:"ury5ymp",scriptTimeout:3e3,async:!0},c=e.documentElement,i=setTimeout(function(){c.className=c.className.replace(/\bwf-loading\b/g,"")+" wf-inactive"},a.scriptTimeout),n=e.createElement("script"),s=!1,o=e.getElementsByTagName("script")[0];c.className+=" wf-loading",n.src="https://use.typekit.net/"+a.kitId+".js",n.async=!0,n.onload=n.onreadystatechange=function(){if(t=this.readyState,!(s||t&&"complete"!=t&&"loaded"!=t)){s=!0,clearTimeout(i);try{Typekit.load(a)}catch(e){}}},o.parentNode.insertBefore(n,o)}(document);
+    // Google Analytics
+    function gtag(){dataLayer.push(arguments)}window.dataLayer=window.dataLayer||[],gtag("js",new Date),gtag("config","UA-128941201-1"),(adsbygoogle=window.adsbygoogle||[]).push({google_ad_client:"ca-pub-2427798032219417",enable_page_level_ads:!0});

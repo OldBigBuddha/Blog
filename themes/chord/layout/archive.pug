@@ -8,6 +8,9 @@ block title
   if page.archive
     title= __('archive') + " | " + config.title
 
+block style
+  link(rel="stylesheet", href=url_for("/css/archive.css"))
+
 block content
   .post__achive
     each posts, year in _.groupBy(page.posts.toArray(), p => - p.date.format('YYYY'))

@@ -1,6 +1,25 @@
-/*=========
-  Page Style
-=========*/
+@import '_variables'
+
+body
+  background-color $bg_color
+  color $font_color
+  font-family fot-tsukubrdgothic-std,sans-serif
+  font-style normal
+  font-weight 400
+
+a
+  color #1FAE89
+  text-decoration none
+  font-weight bold
+
+p
+  margin-bottom 1.2em
+
+img
+  max-width 100%
+  padding 0.5em 0
+  margin auto
+  display block
 
 section.content
   width 800px
