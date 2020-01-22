@@ -3,6 +3,9 @@
 body
   background-color $bg_color
   color $font_color
+  font-family fot-tsukubrdgothic-std,sans-serif
+  font-style normal
+  font-weight 400
 
 a
   color #1FAE89
