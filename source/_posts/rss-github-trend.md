@@ -5,6 +5,7 @@ tags:
   - [Nodejs]
   - [Express]
   - [GitHub]
+code: true
 ---
 この記事は [クソアプリ Advent Calendar 2018](https://qiita.com/advent-calendar/2018/kuso-app) 16日目の記事です。
 

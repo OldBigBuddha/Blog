@@ -5,6 +5,7 @@ tags:
   - [Python]
   - [Flask]
   - [Heroku]
+code: true
 ---
 最近 Flask で Web API っぽいのを作ってるんですが、いい感じにできてきたので Heroku で公開しようかな、なんてことを考えています。
 

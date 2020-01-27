@@ -5,6 +5,7 @@ tags:
   - [JavaScript]
   - [ECMAScript]
   - [Gulp]
+code: true
 ---
 この記事は[We Are JavaScripters!【執筆初心者歓迎】 Advent Calendar 2018](https://adventar.org/calendars/2972)及び[JavaScript Advent Calendar 2018](https://qiita.com/advent-calendar/2018/javascript)15日目の記事です。
 

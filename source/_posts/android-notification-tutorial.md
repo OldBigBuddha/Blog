@@ -5,6 +5,7 @@ tags:
     - [Android]
     - [Kotlin]
     - [Notification]
+code: true
 ---
 
 この記事は [Android #2 Advent Calendar 2019](https://qiita.com/advent-calendar/2019/android-2) 1日目の記事です。

@@ -5,6 +5,7 @@ tags:
   - [OSS]
   - [GitHub]
   - [Git]
+code: false
 ---
 この記事は[mohikanz Advent Calendar 2018](https://adventar.org/calendars/2950)及び[学生LT Advent Calendar 2018](https://qiita.com/advent-calendar/2018/student-lt)7日目の記事です。
 

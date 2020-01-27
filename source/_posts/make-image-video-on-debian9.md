@@ -4,6 +4,7 @@ date: 2018-12-02 00:00
 tags:
   - [Linux]
   - [ffmpeg]
+code: true
 ---
 
 この記事は[Linux Advent Calendar 2018 2日目](https://qiita.com/advent-calendar/2018/linux)の記事です。

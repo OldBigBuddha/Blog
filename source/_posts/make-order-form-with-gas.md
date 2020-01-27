@@ -3,6 +3,7 @@ title: GASを使っていい感じの応募フォームを作った話
 date: 2018-12-16
 tags:
   - [GAS]
+code: true
 ---
 この記事は[Google Apps Script Advent Calendar 2018](https://qiita.com/advent-calendar/2018/gas)16日目の記事です。
 

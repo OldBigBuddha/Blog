@@ -3,6 +3,7 @@ title: N高に転学して3か月ぐらい経過した
 date: 2019-12-19
 tags:
     - [N高等学校]
+code: false
 ---
 この記事は [mohikanz Advent Calendar 2019](https://adventar.org/calendars/3884) 19日目の記事です。
 
