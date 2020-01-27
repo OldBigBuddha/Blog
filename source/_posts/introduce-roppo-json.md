@@ -6,6 +6,7 @@ tags:
     - [Flask]
     - [Roppo-JSON]
     - [Law]
+code: true
 ---
 
 この記事は [N高等学校 Advent Calendar 2019](https://qiita.com/advent-calendar/2019/n-highschool) 3日目の記事です。

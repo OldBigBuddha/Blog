@@ -4,6 +4,7 @@ date: 2019-03-21
 tags:
 - [GitHub]
 - [Asana]
+code: false
 ---
 最近、Task 管理に [Asana](https://asana.com/) を使うようになりました。そのついでで GitHub の Issue も Asana 側で管理できないかなと思ったらどうやらいけそうなのでやってみます。
 

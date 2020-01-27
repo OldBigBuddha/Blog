@@ -6,6 +6,7 @@ tags:
   - [Kotlin]
   - [Android]
   - [Fuel]
+code: true
 ---
 この記事は[Android Advent Calendar 2018](https://qiita.com/advent-calendar/2018/android) 9日目の記事です。
 

@@ -4,6 +4,7 @@ date: 2018-12-01
 category: technology
 tags:
   - git
+code: true
 ---
 この記事は[Life is Tech ! Advent Calendar 2018 - Adventar](https://adventar.org/calendars/3003)1日目の記事です
 

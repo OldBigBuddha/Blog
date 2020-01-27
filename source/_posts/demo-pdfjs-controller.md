@@ -3,6 +3,7 @@ title: pdfjs-controllerのDemoを動かすのに手こずった話
 date: 2018-11-07 19:42:49
 tags:
   - JavaScript
+code: true
 ---
 azu氏の[pdf.js-controller](https://github.com/azu/pdf.js-controller)をローカルで動かすのに戸惑ったので
 

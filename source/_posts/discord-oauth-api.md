@@ -5,6 +5,7 @@ tags:
     - [Python]
     - [OAuth2.0]
     - [DiscordAPI]
+code: true
 ---
 
 この記事は [認証認可技術 Advent Calendar 2019](https://qiita.com/advent-calendar/2019/identity) および [Discord Advent Calendar 2019](https://qiita.com/advent-calendar/2019/discord) 20 日目の記事です。

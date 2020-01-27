@@ -4,6 +4,7 @@ date: 2018-12-25
 tags:
   - [JAMstack]
   - [Netlify]
+code: true
 ---
 この記事は[JAMstack Advent Calendar 2018](https://qiita.com/advent-calendar/2018/jamstack)25日目の記事です。
 

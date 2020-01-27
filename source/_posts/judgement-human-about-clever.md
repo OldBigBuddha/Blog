@@ -5,6 +5,7 @@ category:
   - Tweet
 tags:
   - ポエム
+code: false
 ---
 # 最初に
 「人を〇〇で判断してはいけない」
