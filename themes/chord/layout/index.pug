@@ -5,6 +5,7 @@ block title
 
 block style
   link(rel="stylesheet", href=url_for("/css/index.css"))
+  link(rel="stylesheet", href=url_for("/css/component/tag.css"))
 
 block content
   div.content__index
@@ -15,24 +16,25 @@ block content
               a(href=url_for(post.path))
                 = post.title
             .post__date= post.date.format(config.date_format)
-            if post.description
-              .post__content
-                != post.description
-            else if post.excerpt
-              .post__content
-                != post.excerpt
-            else if post.content
-              - var br = post.content.indexOf('\n')
-              if br < 0
-                .post__content
-                  != post.content
-              else
-                .post__content
-                  != post.content.substring(0, br)
             if post.tags
               .post__tags
-                for tag in post.tags.toArray()
-                  a(href=url_for(tag.path))= tag.name
+                ul
+                  for tag in post.tags.toArray()
+                    li: a(href=url_for(tag.path))= tag.name
+            //- if post.description
+            //-   .post__content
+            //-     != post.description
+            //- else if post.excerpt
+            //-   .post__content
+            //-     != post.excerpt
+            //- else if post.content
+            //-   - var br = post.content.indexOf('\n')
+            //-   if br < 0
+            //-     .post__content
+            //-       != post.content
+            //-   else
+            //-     .post__content
+            //-       != post.content.substring(0, br)
 
 block pagination
   include _include/paginator
