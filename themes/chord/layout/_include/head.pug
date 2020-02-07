@@ -15,7 +15,7 @@ head(prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb# article: http://ogp.
 
   meta(property="og:description", content=config.description)
 
-  if page.layout === "post"
+  if is_post()
     meta(property="og:type", content="article")
   else
     meta(property="og:type", content="website")
