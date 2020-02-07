@@ -1,7 +1,17 @@
 if page.prev || page.next
-  .paginator
-    if page.prev
-      a.pre(href=url_for(page.prev_link || page.prev.path))= __('previous')
+  #paginator
+    if page.layout === "post"
+      if page.prev
+        #newer
+          a(href=url_for(page.prev_link || page.prev.path))= page.prev.title
+      if page.next
+        #older
+          a(href=url_for(page.next_link || page.next.path))= page.next.title
+    else
+      if page.prev
+        #newer
+          a(href=url_for(page.prev_link || page.prev.path)) 新しい記事へ
 
-    if page.next
-      a.next(href=url_for(page.next_link || page.next.path))= __('next')
+      if page.next
+        #older
+          a(href=url_for(page.next_link || page.next.path)) 古い記事へ
