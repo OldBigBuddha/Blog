@@ -1,0 +1,29 @@
+[[redirects]]
+  from = "http://simpleisbest.netlify.com/*"
+  to = "https://oldbigbuddha.dev/:splat"
+  forcus = true
+  status = 304
+
+[[redirects]]
+  from = "https://simpleisbest.netlify.com/*"
+  to = "https://oldbigbuddha.dev/:splat"
+  forcus = true
+  status = 304
+
+[[redirects]]
+  from = "http://oldbigbuddha.dev/*"
+  to = "https://oldbigbuddha.dev/:splat"
+  forcus = true
+  status = 304
+
+[[redirects]]
+  from = "http://blog.oldbigbuddha.net/*"
+  to = "https://oldbigbuddha.dev/:splat"
+  forcus = true
+  status = 304
+
+[[redirects]]
+  from = "https://blog.oldbigbuddha.net/*"
+  to = "https://oldbigbuddha.dev/:splat"
+  forcus = true
+  status = 304
