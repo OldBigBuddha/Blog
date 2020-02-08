@@ -11,7 +11,10 @@
 [[redirects]]
   from = "https://simpleisbest.netlify.com/*"
   to = "https://oldbigbuddha.dev/:splat"
+  status=301
   forcus = true
+  headers = {X-From = "Netlify"}
+
 
 # [[redirects]]
 #   from = "http://oldbigbuddha.dev/*"
