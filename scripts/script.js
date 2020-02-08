@@ -15,7 +15,7 @@ hexo.extend.generator.register('netlify-redirects', locals => {
   const data = pathFn.join( process.env.PWD || process.cwd() , '../underscore/_redirects');
   console.log("Generated: _redirects");
   return {
-    path: "_headers",
+    path: "_redirects",
     data: data
   };
 });
