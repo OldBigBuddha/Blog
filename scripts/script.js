@@ -1,7 +1,7 @@
 hexo.extend.generator.register('netlify-headers', locals => {
   var fs = require('hexo-fs');
   var pathFn = require('path');
-  const data = pathFn.join( process.env.PWD || process.cwd() , '../underscore/_headers');
+  const data = fs.readFileSync(pathFn.join( process.env.PWD || process.cwd() , 'underscore/_headers'));
   console.log("Generated: _headers");
   return {
     path: "_headers",
@@ -12,7 +12,7 @@ hexo.extend.generator.register('netlify-headers', locals => {
 hexo.extend.generator.register('netlify-redirects', locals => {
   const fs = require('hexo-fs');
   const pathFn = require('path');
-  const data = pathFn.join( process.env.PWD || process.cwd() , '../underscore/_redirects');
+  const data =  fs.readFileSync(pathFn.join( process.env.PWD || process.cwd() , 'underscore/_redirects'));
   console.log("Generated: _redirects");
   return {
     path: "_redirects",
