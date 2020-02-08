@@ -13,7 +13,7 @@ timezone: Asia/Tokyo
 
 # URL
 ## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
-url: https://blog.oldbigbuddha.net/
+url: https://oldbigbuddha.dev/
 root: /
 permalink: post/:title/
 permalink_defaults:
