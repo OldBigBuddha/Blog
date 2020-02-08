@@ -1,5 +1,5 @@
-http://simpleisbest.netlify.com/* https://oldbigbuddha.dev/:splat
-https://simpleisbest.netlify.com/* https://oldbigbuddha.dev/:splat
-http://oldbigbuddha.dev/* https://oldbigbuddha.dev/:splat
-http://blog.oldbigbuddha.net/* https://oldbigbuddha.dev/:splat
-https://blog.oldbigbuddha.net/* https://oldbigbuddha.dev/:splat
+http://simpleisbest.netlify.com/* https://oldbigbuddha.dev/:splat 301!
+https://simpleisbest.netlify.com/* https://oldbigbuddha.dev/:splat 301!
+http://oldbigbuddha.dev/* https://oldbigbuddha.dev/:splat 301!
+http://blog.oldbigbuddha.net/* https://oldbigbuddha.dev/:splat 301!
+https://blog.oldbigbuddha.net/* https://oldbigbuddha.dev/:splat 301!
