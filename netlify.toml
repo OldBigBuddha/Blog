@@ -8,10 +8,10 @@
 #   to = "https://oldbigbuddha.dev/:splat"
 #   forcus = true
 
-# [[redirects]]
-#   from = "https://simpleisbest.netlify.com/*"
-#   to = "https://oldbigbuddha.dev/:splat"
-#   forcus = true
+[[redirects]]
+  from = "https://simpleisbest.netlify.com/*"
+  to = "https://oldbigbuddha.dev/:splat"
+  forcus = true
 
 # [[redirects]]
 #   from = "http://oldbigbuddha.dev/*"
