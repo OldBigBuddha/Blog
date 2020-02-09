@@ -29,6 +29,7 @@ const sendReport = report => {
 }
 
 exports.handler = function(event, context, callback) {
+    console.log(webhookUrl);
     sendReport(event.body)
     callback(null, {
       statusCode: 200,
