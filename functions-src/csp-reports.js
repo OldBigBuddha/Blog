@@ -1,8 +1,10 @@
 const request = require('request');
+const webhookUrl = process.env.DISCORD_WEBHOOK_URL;
+console.log(webhookUrl);
 
 const sendReport = report => {
   request.post({
-      uri: "https://discordapp.com/api/webhooks/675893097023930368/Qu710DZW80T6QUISwloY_p9qyKDSjIbqGPHxDqlC7eKVZ-o-NwySKTwXC06QFpTtJsQ2",
+      uri: webhookUrl,
       headers: {
           "Content-Type": "application/json"
       },
@@ -14,7 +16,7 @@ const sendReport = report => {
         console.log(report)
       } else {
         request.post({
-          uri: "https://discordapp.com/api/webhooks/675893097023930368/Qu710DZW80T6QUISwloY_p9qyKDSjIbqGPHxDqlC7eKVZ-o-NwySKTwXC06QFpTtJsQ2",
+          uri: webhookUrl,
           headers: {
               "Content-Type": "application/json"
           },
