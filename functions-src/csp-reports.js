@@ -1,6 +1,5 @@
 const request = require('request');
 const webhookUrl = process.env.DISCORD_WEBHOOK_URL;
-console.log(webhookUrl);
 
 const sendReport = report => {
   request.post({
@@ -29,7 +28,6 @@ const sendReport = report => {
 }
 
 exports.handler = function(event, context, callback) {
-    console.log(webhookUrl);
     sendReport(event.body)
     callback(null, {
       statusCode: 200,
