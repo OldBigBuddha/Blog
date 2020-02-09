@@ -2,6 +2,10 @@
   "name": "blog",
   "version": "0.0.0",
   "private": true,
+  "scripts": {
+    "dev:func": "netlify-lambda serve ./functions-src --port 9001",
+    "build:func": "netlify-lambda build functions-src"
+  },
   "hexo": {
     "version": "4.2.0"
   },
@@ -26,6 +30,7 @@
     "del": "^5.1.0",
     "gulp": "^4.0.2",
     "gulp-autoprefixer": "^7.0.1",
-    "gulp-clean-css": "^4.2.0"
+    "gulp-clean-css": "^4.2.0",
+    "netlify-lambda": "^1.6.3"
   }
 }
