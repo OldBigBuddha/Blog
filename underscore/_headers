@@ -1,0 +1,5 @@
+/*
+  X-Frame-Options: DENY
+  XSS-Protection: 1; mode=block
+  X-Content-Type-Options: nosniff
+  Content-Security-Policy-Report-Only: default-src 'self'; img-src res.cloudinary.com/; report-uri https://oldbigbuddha.dev/.netlify/functions/csp-reports
