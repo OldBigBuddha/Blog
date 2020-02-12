@@ -11,6 +11,8 @@
   },
   "dependencies": {
     "hexo": "^4.2.0",
+    "hexo-autoprefixer": "^2.0.0",
+    "hexo-clean-css": "^1.0.0",
     "hexo-generator-archive": "^1.0.0",
     "hexo-generator-category": "^1.0.0",
     "hexo-generator-feed": "^2.2.0",
@@ -25,13 +27,6 @@
     "hexo-server": "^1.0.0"
   },
   "devDependencies": {
-    "@babel/core": "^7.8.3",
-    "@babel/preset-env": "^7.8.3",
-    "@babel/register": "^7.8.3",
-    "del": "^5.1.0",
-    "gulp": "^4.0.2",
-    "gulp-autoprefixer": "^7.0.1",
-    "gulp-clean-css": "^4.2.0",
     "netlify-lambda": "^1.6.3"
   }
 }

@@ -95,3 +95,13 @@ theme: chord
 ## Docs: https://hexo.io/docs/deployment.html
 deploy:
   type:
+
+clean_css:
+  exclude:
+    - "*.min.css"
+
+autoprefixer:
+  exclude:
+    - '*.min.css'
+  browsers:
+    - 'last 2 versions'
