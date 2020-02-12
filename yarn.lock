@@ -3527,6 +3527,15 @@ hexo-bunyan@^2.0.0:
     mv "~2"
     safe-json-stringify "~1"
 
+hexo-clean-css@^1.0.0:
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/hexo-clean-css/-/hexo-clean-css-1.0.0.tgz#11505ba98b4010bd12afe5015a7e6bfdb39f8048"
+  integrity sha512-nNANdYD5hDrwZAu2DJlOkrNywhPAjIgf4xuo2YuaSwfwLKKMlyB0pYelog1aTIKQMhJLLWCM4gxfW30lKmHXTA==
+  dependencies:
+    bluebird "^3.5.5"
+    clean-css "^4.2.1"
+    micromatch "^4.0.2"
+
 hexo-cli@^3.0.0:
   version "3.1.0"
   resolved "https://registry.yarnpkg.com/hexo-cli/-/hexo-cli-3.1.0.tgz#a7414d4647333fe73762f86d77e5660659c0d05b"
