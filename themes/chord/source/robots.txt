@@ -1,3 +1,2 @@
 User-agent: *
-Disallow: /admin/
 Sitemap: https://oldbigbuddha.dev/sitemap.xml
