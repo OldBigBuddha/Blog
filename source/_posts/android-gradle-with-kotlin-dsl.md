@@ -25,7 +25,8 @@ code: true
 
 あと僕のTwitter垢は [@OJI_1941](https://twitter.com/OJI_1941) です。
 
-# Kotlin DSL って何？
+## Kotlin DSL って何？
+
 そもそも Kotlin DSL ってなんなんでしょうか。
 
 DSL は `Domain Specific Language(ドメイン固有言語)` の略です。`micro-languages` や `little languages` とも呼ばれ、特定の領域に特化した設計がなされたプログラミング言語のことを指します。有名どころでは `XML` や `SQL`、`正規表現` などがあります。
@@ -36,7 +37,8 @@ DSLには `内部DSL` と `外部DSL` があります。違いをしっかり理
 
 少し前に Android のレイアウトを Kotlin で組める [Anko](https://github.com/Kotlin/anko) なんてものもありましたが、あれも DSL の一種ですね。
 
-# 始める前に
+## 始める前に
+
 Kotlin DSL が何かわかったところで早速実際に導入していこうと思います。
 
 いきなり既存プロジェクトに Kotlin DSL を導入するのはなかなかハードなので、今回は新規プロジェクトを作成し、真っさらな状態(？)に Kotlin DSL を導入していきます。
@@ -56,31 +58,36 @@ Kotlin DSL が何かわかったところで早速実際に導入していこう
 
 色々見てた結果 [きりみんちゃんの記事](https://kirimin.hatenablog.com/entry/2018/11/17/144158) を見つけて、マシンに入っている Gradle をアップデートしたらいけました。Kotlin DSL を導入する前に、ローカルの Gradle を確認しておいたほうがいいかもしれません。
 
-# 新規プロジェクト作成
+## 新規プロジェクト作成
+
 ローカルのGradleも見直したところでプロジェクトを新規作成します。
 
 最初の Activity は `Empty Activity` を選択。言語はもちろん Kotlin で、Minimum API Level は Android 5.0(Lollipop)、 `Use AndroidX artifacts` にチェックを入れます。後はご自由にどうぞ。
 
 プロジェクトができたら、念の為にできたてほやほやの状態で動かしてみます。稀にここで詰んでるのに気づかず開発を進めてしまって謎のエラーに苦しめられることがあります。
 
-# 下ごしらえ
+## 下ごしらえ
+
 プロジェクトが無事動くことを確認したら、下ごしらえを行います。この下ごしらえを先にやっておくと、導入がスムーズになります。
 
-## ライブラリを最新にする
+### ライブラリを最新にする
+
 プロジェクト生成後、 `app/build.gradle` の `dependencies` を確認し、もし古いバージョンだと注意がでたら `Alt + Enter` で最新にしてあげます。最新にしたら `Gradle Sync` を行い、Build が通ることを確認します。
 
-## Gradle のバージョンを上げる。
+### Gradle のバージョンを上げる
+
 2019/02/23 現在、Gradle の最新バージョンは 5.2.1 なので、それを使うように設定します。
 
 `/gradle/wrapper/gradle-wrapper.properties` を開き、`distributionUrl` を変更します。
 
-```
+```groovy
 distributionUrl=https\://services.gradle.org/distributions/gradle-5.2.1-all.zip
 ```
 
 これで Gradle 5.2.1が利用できます。
 
-## 可能な限り Kotlin の記法に近づける
+### 可能な限り Kotlin の記法に近づける
+
 Groovy は代入や関数を呼び出す際、 `=` や `()` を省略することができます。また、文字列に `'` と `"` の両方が使えるなど、Kotlin の記法とは違った書き方が可能になっています。Android Studio が生成するファイルもそのことが使われており、 文字列に `'` が使われていたり、`=` と `()` が省略されていたりしますので、その部分を Kotlin の記法に近づけていきます。(なんでJavaの記法に近づけなかったのか疑問。)
 
 この時点でファイルのリネームは行いません。
@@ -183,7 +190,8 @@ dependencies {
 
 これで下ごしらえは完了です、お疲れ様でした。これだけでも個人的にはかなり見やすくなった気がします。
 
-# ファイル名をリネームしていく
+## ファイル名をリネームしていく
+
 下ごしらえが完了しましたので、どんどんファイル名に `.kts` を付与していきます。下ごしらえをしてあるのでリネーム後の修正は少しで済みます。
 
 まずは `setting.gradle` を `setting.gradle.kts` へ。Kotlin DSL を適用することによる構文変更はありません。
@@ -263,15 +271,18 @@ dependencies {
 
 これで Kotlin DSL 化は完了です、お疲れ様でした。
 
-# buildSrc(おまけ)
+## buildSrc(おまけ)
+
 Dependenciesの管理って皆さんどうされていますか？
 
 さっき書いてた様に直書きだったり、Gradle Extra Properties を使っておられる方が多いんじゃないかなと思います。しかし、最近は buildSrc と呼ばれる方法があります。折角 Kotlin DSL を導入したついでに、buildSrc も使ってみましょう。
 
-## 何が美味しいのか
+### 何が美味しいのか
+
 buildSrc は **Kotlin で Dependencies を管理する** というものです。専用のモジュールを作成し、そこに `object` を利用して Dependency を定義していきます。これによって Gradle Script 内で Dependency の入力が補完されたり、各 Dependency を管理しやすくなります。しかし、個人規模の開発だと恩恵を受けにくいので、おまけとして紹介させていただきます。
 
-## 導入
+### 導入
+
 まずはルート直下に `buildSrc` というディレクトリ（`Module` ではなく `Directory`）を作成します。そしたら `/buildSrc` の下に `build.gradle.kts` を作成します。
 
 ```kotlin
@@ -437,7 +448,8 @@ object Fuel {
 
 バージョン単体をを外に出すのではなく、`object` 内でのみ使いまわせる変数にする感じです。別ファイルにする場合は今回の例のように Kotlin のバージョンみたいに根本のバージョンに限ったほうがいいかなと思います。
 
-# 締め
+## 締め
+
 これで無事 Kotlin DSL を導入でき、ついでに buildSrc も導入できました。お疲れ様です。
 
 Gradle Script はプロジェクトを支えている部分なので、ちょっとミスるとすぐ真っ赤になったり補完が効かなくなったりで非常に鬱陶しい部分ではあります。しかも人によってはあまり効果を感じないという。
@@ -449,4 +461,4 @@ Gradle Script はプロジェクトを支えている部分なので、ちょっ
 最後のもう一度GitHubとTwitterのリンクを貼っておきます。
 
 - GitHub: [OldBigBuddha/sample-kotlin-dsl: まっさらな新規プロジェクトにKotlin DSLを導入したやつ。](https://github.com/OldBigBuddha/sample-kotlin-dsl)
-- Twitter: [＠OJI_1941](https://twitter.com/OJI_1941)
+- Twitter: [＠OldBigBuddha](https://twitter.com/OldBigBuddha)
