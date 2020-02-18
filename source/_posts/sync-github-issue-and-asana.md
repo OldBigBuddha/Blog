@@ -8,12 +8,14 @@ code: false
 ---
 最近、Task 管理に [Asana](https://asana.com/) を使うようになりました。そのついでで GitHub の Issue も Asana 側で管理できないかなと思ったらどうやらいけそうなのでやってみます。
 
-# 方法
+## 方法
+
 どうやら [Unito](https://unito.io/) というサービスがあり、それを使えば同期できるそうです。
 
 Unito は様々な課題管理サービスを同期させるためのサービスです。Asana と GitHub 以外に Jira や Wrike、Trello なども対応しているようです。詳しくは[こちら](https://guide.unito.io/hc/en-us/articles/224549548-The-Basics)をご覧ください。
 
-# やってみた
+## やってみた
+
 方法がわかったところでやってみます。とりあえず Asana と GitHub それぞれに同期する Project、Repository を作成します。今回は [弊Blogのリポジトリ](https://github.com/OldBigBuddha/Blog) と、その Issue を同期させるための Project を利用します。
 
 まずは Asana で Team と Project を作成して…
@@ -58,5 +60,6 @@ Unito は様々な課題管理サービスを同期させるためのサービ�
 
 無事 Closed を含めて反映されていますね。これでめでたしめでたし。
 
-# 所感
+## 所感
+
 ちょっと前まで Task などは Issue で管理をしていたのですが、最近やっているプロジェクトで Asana を使ってみたら予想以上に使いやすかったので一気に引っ越しを始めました。それでも commit や PR に Task として登録しておいた Issue を紐付けたいなと思って色々探していたらこの方法にたどり着きました。Asana のタグと Issue のラベルが同期できるかは把握してません(多分できる…？)。また気が向いたら調べてみます。

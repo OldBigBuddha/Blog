@@ -17,34 +17,37 @@ code: true
 
 また、記事を書くにあたって現代の文法にリメイク(リファクタリング？)しました。
 
-# 全体の流れ
+## 全体の流れ
+
 当時は以下のような流れで注文者のもとにトレーナーを届けていました。
 
 ![Process](https://blog.oldbigbuddha.net/images/post/order-process.png "Process")
 
 今回は主に赤丸の部分について説明していきます。
 
-# 環境構築
+## 環境構築
+
 なるべく今風に書くにあたって、**ES6以上の構文**を使って**ローカルで**組めるようにしました。
 
-## ローカルでGASを組む
+### ローカルでGASを組む
+
 ローカルでGASを組みには、[clasp](https://github.com/google/clasp)というGoogle製のツールを使います。
 
 claspについては[7日目のmatsuoshi氏](https://blog.monaural.net/post/gas-and-es6-with-clasp/)や、[9日目のtakanakahiko氏](https://qiita.com/takanakahiko/items/f2b50794e8b3e00fd945)が記事として取り上げていらっしゃるので、詳細は割愛させていただきます。
 
-## ES6以上の構文でGASを組む
+### ES6以上の構文でGASを組む
 
 両氏ともTypeScriptを用いて組まれていらっしゃるのですが、私はTypeScriptを書いたことがないのでBabelを利用してJavaScriptで書いています。
 
 結構ゴリ押しなのですが、まずはBabelをインストールして(Babel7から名前が `babel-` から `@babel/` に変わってます。)
 
-```
+```sh
 yarn add -D @babel/core @babel/cli
 ```
 
 PresetとPluginを入れます。
 
-```
+```sh
 yarn add -D @babel/preset-env babel-plugin-transform-member-expression-literals babel-plugin-transform-property-literals
 ```
 
@@ -69,9 +72,10 @@ npm scriptsを設定すれば完了です。
 
 この設定をしておけば、 `npm run build` をした後 `./dist` 下で `clasp push` をすればOKです。
 
-一つ注意点ですが、 `clasp push` をするディレクトリに `appsscript.json` を置かなくてはいけません。(ここでちょっとハマった)
+ひとつ注意点ですが、 `clasp push` をするディレクトリに `appsscript.json` を置かなくてはいけません。(ここでちょっとハマった)
 
-# Formを準備する
+## Formを準備する
+
 今回必要な情報は
 
 - メールアドレス
@@ -95,13 +99,9 @@ Formはただ質問を準備するだけなので、特に説明はしません�
 
 氏名やフリガナが姓と名で分かれているのは、入力者による入力フォーマットの差を無くすためです。
 
-# 実際に書いたコード
-以下のコードはES6以降の構文を用いたものです。
+## 実際に書いたコード
 
-FormからのResponseが保存されているシートの名前は `Original`、整形してリスト化したものを保存するシートの名前が `Roster` です。
-
-原則として `Original` のデータは触りません。何か変更があった場合は**必ず** `Roster` のデータをいじります。(何か起こったときに修復できるように)
-
+以下のコードはES6以降の構文を用いたものです。FormからのResponseが保存されているシートの名前は `Original`、整形してリスト化したものを保存するシートの名前が `Roster` です。原則として `Original` のデータは触りません。何か変更があった場合は**必ず** `Roster` のデータをいじります。(何か起こったときに修復できるように)
 
 ```javascript
 const reservation = () => {
@@ -180,11 +180,10 @@ const makeList = info => {
 
 `reservationWithIndex` と `reservation` をわけることによって、何か情報を修正したりメールを再送信する必要ができたときに即席のfix関数を用意できるようにしています。
 
-# 締め
+## 締め
+
 コード各所にコメントを入れているので、特にコードに関する説明はしませんでした。
 
-もしここの処理なにやってるのかわからんとか、ここはこう書いたほうがいいよっていうのがありましたら [@OJI_1941](https://www.twitter.com/OJI_1941) までお願いします。DMは閉じていますのでリプライかメンションでお願いします。
-
-ローカルで組めたり、今どきの構文で書けたりとGASもなかなか進化しましたね。最近は[G Suite DeveloperHub](https://developers.google.com/gsuite/)が追加されたりとGASの環境が整いつつありますので、ぜひ皆さんご活用されてみてはと思います。(カレンダー経由で来た方はすでにフル活用されていることと思いますがｗ)
+もしここの処理なにやってるのかわからんとか、ここはこう書いたほうがいいよっていうのがありましたら [@OldBigBuddha](https://www.twitter.com/OldBigBuddha) までお願いします。DMは閉じていますのでリプライかメンションでお願いします。ローカルで組めたり、今どきの構文で書けたりとGASもなかなか進化しましたね。最近は[G Suite DeveloperHub](https://developers.google.com/gsuite/)が追加されたりとGASの環境が整いつつありますので、ぜひ皆さんご活用されてみてはと思います。(カレンダー経由で来た方はすでにフル活用されていることと思いますがｗ)
 
 ありがとうございました。

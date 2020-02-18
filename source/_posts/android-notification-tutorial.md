@@ -234,4 +234,4 @@ Notification は難しいと思っていましたが、個人が遊ぶ範囲で�
 
 [Android #2 Advent Calendar 2019](https://qiita.com/advent-calendar/2019/android-2) 2日目は [@daichan4649](https://twitter.com/daichan4649) さんです。
 
-Twitter: [＠OJI_1941](https://twitter.com/OJI_1941)
+Twitter: [＠OldBigBuddha](https://twitter.com/OldBigBuddha)
