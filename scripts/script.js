@@ -1,3 +1,7 @@
+hexo.extend.tag.register('noindent', args => {
+  return '<p class="no-indent">' + args[0] + '</p>';
+});
+
 hexo.extend.generator.register('netlify-headers', locals => {
   var fs = require('hexo-fs');
   var pathFn = require('path');
