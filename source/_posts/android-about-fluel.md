@@ -14,7 +14,8 @@ code: true
 
 Fuelというライブラリを利用してWebAPIを叩きます
 
-# 前提条件
+## 前提条件
+
 この記事で出てくるコードは以下の環境で書いてます。
 
 - AndroidStudio: 3.3.1
@@ -28,7 +29,8 @@ FuelもMoshiも少し前のバージョンを利用しています。
 
 Fuelの1.16.0がKotlin 1.3.0に対応していたので使いたかったのですが、Moshiが対応してなかったので1.2.71を利用しています。
 
-# Fuelとは
+## Fuelとは
+
 [Fuel](https://github.com/kittinunf/Fuel/tree/1.15.1)はKotlinで書かれたHTTP通信ライブラリです。(リンク先は1.15.1のドキュメントです、ご注意ください。)
 
 有名どころではRetrofitなどがあります。
@@ -47,19 +49,21 @@ Fuelの特徴は以下のとおりです。(READMEの内容を意訳&かいつ�
 
 自動で呼び出すの意味はコードをみていただいたほうが早いと思います。
 
-# 実際に使ってみる
+## 実際に使ってみる
+
 実際にFuelを使ってWebAPIを叩いてみます。
 
 今回叩くAPIは[ニコニコ動画のコンテンツ検索API](http://site.nicovideo.jp/search-api-docs/search.html)です。
 
 VOCALOIDの曲一覧を取得して、一覧で表示するようにしようと思います。
 
-## Gradleに依存関係を書く
+### Gradleに依存関係を書く
+
 `build.gradle` に利用するライブラリを書いていきます。
 
 今回触れるライブラリには、`*` をつけています。
 
-```
+```groovy
 implementation 'com.android.support:design:28.0.0'
 implementation 'com.android.support:cardview-v7:28.0.0'
 
@@ -76,7 +80,8 @@ implementation 'com.squareup.picasso:picasso:2.71828'
 
 Gsonでも良かったのですが、[Gsonを使うとNon-nullにNullが入るという謎現象](https://qiita.com/egugue/items/f1f35c250f7a25768751)があったらしいのでMoshiを利用します。記事が古いので、多分なおっているとは思いますが試してる暇がなかったのでMoshiでいきます。
 
-## Fuelの基本設定をする
+### Fuelの基本設定をする
+
 必須ではありませんが、極力共通設定はまとめておきたいので、Applicationクラスを一つ用意し、そこで色々設定しておきます。
 
 - Header
@@ -92,7 +97,7 @@ Gsonでも良かったのですが、[Gsonを使うとNon-nullにNullが入る�
 
 以下は `MyApplication.kt` の内容です。
 
-```
+```kotlin
 package net.oldbigbuddha.vocaloidranking
 
 import android.app.Application
@@ -122,7 +127,7 @@ class MyApplication: Application() {
 
 ついでにInternet接続をするのでPermissionも書いておきます。
 
-```
+```xml
     <uses-permission android:name="android.permission.INTERNET" />
 
     <application
@@ -130,7 +135,8 @@ class MyApplication: Application() {
         ~ 以下変更なし ~
 ```
 
-## レスポンスをクラスで表現する
+### レスポンスをクラスで表現する
+
 JavaScriptなどだとJSONをそのままObjectとして扱えますが、JavaやKotlinではクラスへパースしなくてはいけません。
 
 レスポンスを元に必要なフィールドを割り出し、フィールドのみのクラスを作成します。
@@ -139,7 +145,7 @@ Kotlinには `data class` という非常に便利な機能がありますので
 
 `#VOCALOID殿堂入り` がついた動画一覧をリクエストした際のレスポンスが以下になります。
 
-```
+```json
 {
     "meta": {
         "status": 200,
@@ -162,7 +168,7 @@ Kotlinには `data class` という非常に便利な機能がありますので
 
 このレスポンスをクラス化した結果が以下になります。
 
-```
+```kotlin
 data class ResponseData(
     val meta: Meta,
     val data: List<VideoInfo>
@@ -190,7 +196,8 @@ data class VideoInfo(
 
 もしレスポンスのフィールド名がスネークケース等名前を変えたい場合は、Moshiの変換Adapterを自作することで解決できます。
 
-## 実装する
+### 実装する
+
 準備が整ったので、実際にAPIを叩いてみようと思います。
 
 今回はAPIを叩くことのみに注力しているため、Main ActivityにTextViewをおいてそこにレスポンスを貼るという非常に雑い仕様です。
@@ -201,7 +208,7 @@ Main ActivityにTextViewを実装しておいてください。ここでは `tv_
 
 まずはJSONパーサのMoshiを準備します。
 
-```
+```kotlin
 val moshi = Moshi.Builder()
             .add(KotlinJsonAdapterFactory())
             .build()
@@ -209,7 +216,7 @@ val moshi = Moshi.Builder()
 
 続いて本題のFuelです。
 
-```
+```kotlin
 Fuel.get("/search", listOf("q" to "VOCALOID殿堂入り")).responseString { request, response, result ->
     when (result) {
         is Result.Failure -> {
@@ -263,7 +270,8 @@ Fuel.get("/search", listOf("q" to "VOCALOID殿堂入り")).responseString { requ
 
 サムネイルはFuelではなくPicassoを利用しています。
 
-## 注意
+### 注意
+
 今回は触れませんでしたが、APIによってはCookieを利用することもあると思います。
 
 Retrofit2と違い、Fuel側でCookie管理等を一切してくれません。
@@ -272,7 +280,8 @@ Retrofit2と違い、Fuel側でCookie管理等を一切してくれません。
 
 細かいことは[こちら](https://github.com/kittinunf/Fuel/issues/263)でサポートがされているので気になる方はぜひ見てください。
 
-# 感想
+## 感想
+
 ネットワークを使うとなると、どうしても非同期という問題にぶち当たり、Android特有のThread問題(Main Thread以外でViewの操作ができない)で実装に時間がかかることが多々ありました。
 
 特に個人開発は(モチベーション的に)スピードが命みたいなところがありますから、いちいちAsync Taskを実装してとかしてるとどうしても手間がかかってしまいます。
