@@ -20,15 +20,18 @@ ES6より前のJSを書くなんて論外というのが持論ですので、`Gu
 - [gulpjs/gulp: The streaming build system](https://github.com/gulpjs/gulp)
 - [【今更】pugとstylusとbabelをgulp - Qiita](https://qiita.com/sosukesuzuki/items/f1505e034a4e2c755721)
 
-# 作るもの & 使うもの
+## 作るもの & 使うもの
+
 Pug/Stylusを用いて、簡単なWebサイトを一瞬で作るためのテンプレGulpfileを作っていきます。
 
 Gulp4とBebel7を用いて、出力先のディレクトリを鯖にあげたら接続できる状態までしていきます。
 
-# 実際に作る
+## 実際に作る
+
 ガリゴリGulpfileを書いていきます。
 
-## モジュール追加
+### モジュール追加
+
 まずはモジュールを追加します。
 
 僕は`yarn`派です。
@@ -81,7 +84,8 @@ yarn add -D gulp@next gulp-babel gulp-pug gulp-stylus gulp-clean-css gulp-autopr
 
 ```
 
-## .babelrc
+### .babelrc
+
 .babelrcを書いていきます。
 
 BrowserListは自分用のリストを作っておくといいです。特にこだわらない方だったら5分もかからないです。(僕は色々調べたので30分ぐらいかかりましたｗ)
@@ -103,7 +107,8 @@ BrowserListは自分用のリストを作っておくといいです。特にこ
 
 特徴はBabel7から追加された`@babel/preset-env`です。presetは他にもあるのでぜひ[こちら](https://babeljs.io/docs/en/presets#docsNav)で確認してみてください。
 
-## GulpfileでHelloWorld
+### GulpfileでHelloWorld
+
 上記の設定ができたらES6以上の構文を使って`Gulpfile`が組めます。
 
 とりあえずHelloWorldを組んでみます。
@@ -128,20 +133,13 @@ Hello World
 [19:49:34] Finished 'default' after 3.09 ms
 ```
 
-こんな感じで上手くいけます。
+こんな感じで上手くいけます。注意したいのは引数の`next()`、これがないと以下のエラー(？)が出ます。
 
-注意したいのは引数の`next()`、これがないと以下のエラー(？)が出ます。
+タスクは実行されるのですがエラー終了と判定されます。(これが原因でNetlifyの自動ビルドが上手くいかなかった)この引数は後で出てくる`series()`というタスクを同期的に実行するGulpの機能を使うときに重要になってきます。
 
-タスクは実行されるのですがエラー終了と判定されます。(これが原因でNetlifyの自動ビルドが上手くいかなかった)
+### いざ本番
 
-この引数は後で出てくる`series()`というタスクを同期的に実行するGulpの機能を使うときに重要になってきます。
-
-## いざ本番
-基本的な書き方は理解できましたので、ちゃちゃっとタスクを書いていきます。
-
-すでに過去のGulpを書いたことがある方は、おぉと思うかもしれません。
-
-いかのファイル構成を想定しています。
+基本的な書き方は理解できましたので、ちゃちゃっとタスクを書いていきます。すでに過去のGulpを書いたことがある方は、おぉと思うかもしれません。いかのファイル構成を想定しています。
 
 ```bash
 .
@@ -161,7 +159,6 @@ Hello World
 `dist`を丸々鯖に置けば動く想定です。人によっては`public`という名前でやってたりします。(そっちのほうがいいかもしれない)
 
 以下`gulp.babel.js`です。
-
 
 ```javascript
 const { src, dest, series, parallel, watch, task } = require('gulp');
@@ -265,21 +262,12 @@ exports.build = series(clean, parallel(html, css, js));
 exports.default = parallel(watchFiles, browserSync);
 ```
 
-何からナニまでナウくていいですね。
+何からナニまでナウくていいですね。browser-syncは初期化を必要とする & わざわざ`create()`を呼び出すためだけに変数を使いたくなかったので、`require()`を使っています。[こちらのGist](https://gist.github.com/jeromecoupe/0b807b0c1050647eb340360902c3203a)を参考にさせてもらいました。
 
-browser-syncは初期化を必要とする & わざわざ`create()`を呼び出すためだけに変数を使いたくなかったので、`require()`を使っています。
+モジュールの書き方や、タスクの書き方が個人的に満足しています。圧縮系はいれてないので、実際に使う場合は適宜追加してください。
 
-[こちらのGist](https://gist.github.com/jeromecoupe/0b807b0c1050647eb340360902c3203a)を参考にさせてもらいました。
+## 締め
 
-モジュールの書き方や、タスクの書き方が個人的に満足しています。
-
-圧縮系はいれてないので、実際に使う場合は適宜追加してください。
-
-# 締め
-この記事ではGulp4をES6以上の構文を使って書く方法をお伝えしました。
-
-基本的には[公式ドキュメント](https://github.com/gulpjs/gulp/tree/master/docs/getting-started)を読めば大体理解できます。
-
-プラグインを使う場合とかはググればサンプルが色々出てくると思うので公式と照らし合わせながら書いていけばいいと思います。
+この記事ではGulp4をES6以上の構文を使って書く方法をお伝えしました。基本的には[公式ドキュメント](https://github.com/gulpjs/gulp/tree/master/docs/getting-started)を読めば大体理解できます。プラグインを使う場合とかはググればサンプルが色々出てくると思うので公式と照らし合わせながら書いていけばいいと思います。
 
 最後までありがとうございました。
