@@ -1,5 +1,9 @@
 hexo.extend.tag.register('noindent', args => {
-  return '<p class="no-indent">' + args[0] + '</p>';
+  if (args.length == 2) {
+    return '<p class="no-indent"><a href="'+ args[1] +'" target="_blank">' + args[0] + '</a></p>'
+  } else {
+    return '<p class="no-indent">' + args[0] + '</p>';
+  }
 });
 
 hexo.extend.generator.register('netlify-headers', locals => {
