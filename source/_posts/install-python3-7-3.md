@@ -40,7 +40,7 @@ $ sudo apt install build-essential libbz2-dev libdb-dev \
   zlib1g-dev uuid-dev tk-dev
 ```
 
-{% noindent 参考: [Ubuntu環境のPython - python.jp](https://www.python.jp/install/ubuntu/index.html) }
+{% noindent "参考: Ubuntu環境のPython - python.jp" "https://www.python.jp/install/ubuntu/index.html" %}
 
 続いて `make` を利用してビルドします。FFmpeg みたいに色々オプションがあるわけではないです。なんか `--enable-optimizations` をつけるといい感じになるという話を聞いたのでつけておきます。
 

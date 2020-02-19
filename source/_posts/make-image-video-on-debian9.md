@@ -75,7 +75,7 @@ exit
 
 なるべく動画のサイズを抑えたかったので、H.265を採用しています。また、動きが一切ない動画ですのでfps(1秒間に表示されるフレーム数、Youtubeでよく見るのは30fpsや60fps)は1(`-r 1`)にしています。ffmpegのオプションを調べると静止動画には`-tune ssim`を使うというのを見たので使ってます。参考したURLを紛失したので代わりのURL貼っておきます。
 
-{% noindent [Preset Options — x265 documentation](https://x265.readthedocs.io/en/default/presets.html) %}
+{% noindent "Preset Options — x265 documentation" "https://x265.readthedocs.io/en/default/presets.html" %}
 
 初めはPresetを指定していましたがあまり変化が見られなかったので今は指定していません。
 
