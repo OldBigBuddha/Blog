@@ -6,30 +6,32 @@ block title
 block style
   link(rel="stylesheet", href=url_for("/css/post/post.css"))
   script(src='https://kit.fontawesome.com/da314288dc.js', crossorigin='anonymous')
-  link(rel="stylesheet", href=url_for("/css/post/share.css"))
-  link(rel="stylesheet", href=url_for("/css/component/tag.css"))
-  link(rel="stylesheet", href=url_for("/css/post/syntax_highlight.css"))
 
+  if page.code === true
+    link(rel="stylesheet", href=url_for("/css/font.css"))
+    link(rel="stylesheet", href=url_for("/css/post/syntax_highlight.css"))
 
 block content
-  article.content__post
-    h1.post__title= page.title
-    .post__date= page.date.format(config.date_format)
+  main
+    article.content__post
+      h1.post__title= page.title
+      .post__date= page.date.format(config.date_format)
 
-    script(src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js", async)
-    ins.adsbygoogle(
-      style="display:inline-block;width:728px;height:90px",
-      data-ad-client="ca-pub-2427798032219417",
-      data-ad-slot="1019140575")
-    script.
-      (adsbygoogle = window.adsbygoogle || []).push({})
+      script(src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js", async)
+      ins.adsbygoogle(
+        style="display:inline-block;width:728px;height:90px",
+        data-ad-client="ca-pub-2427798032219417",
+        data-ad-slot="1019140575")
+      script.
+        (adsbygoogle = window.adsbygoogle || []).push({})
 
-    hr
+      hr
 
-    section!= page.content
+      section!= page.content
 
-    hr
+      hr
 
+    link(rel="stylesheet", href=url_for("/css/component/tag.css"))
     if page.tags
       .post__tags
         p#tags__title Tags
@@ -38,6 +40,7 @@ block content
             li: a(href=url_for(tag.path))= tag.name
 
     // Share ボタン
+    link(rel="stylesheet", href=url_for("/css/post/share.css"))
     #share
       .button#twitter
         i.fab.fa-twitter

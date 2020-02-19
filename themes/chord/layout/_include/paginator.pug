@@ -1,4 +1,5 @@
 if page.prev || page.next
+  link(rel="stylesheet", href=url_for("/css/component/paginator.css"))
   #paginator
     if page.layout === "post"
       if page.prev
