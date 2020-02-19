@@ -10,12 +10,13 @@ block style
   link(rel="stylesheet", href=url_for("/css/archive.css"))
 
 block content
-  .post__achive
-    each posts, year in _.groupBy(page.posts.toArray(), p => - p.date.format('YYYY'))
-      h2= -year
-      ul.achive__list
-        for post in posts
-          li
-            span.achive__item__date= post.date.format('YYYY/MM/DD')
-            a(href=url_for(post.path), title=post.title)= post.title
+  main
+    .post__achive
+      each posts, year in _.groupBy(page.posts.toArray(), p => - p.date.format('YYYY'))
+        h2= -year
+        ul.achive__list
+          for post in posts
+            li
+              span.achive__item__date= post.date.format('YYYY/MM/DD')
+              a(href=url_for(post.path), title=post.title)= post.title
   include _include/paginator

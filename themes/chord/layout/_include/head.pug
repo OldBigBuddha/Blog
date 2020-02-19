@@ -20,28 +20,19 @@ head(prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb# article: http://ogp.
   else
     meta(property="og:type", content="website")
 
-  meta(property="og:url", content=page.title )
-  meta(property="og:image", content="https://blog.oldbigbuddha.net/images/ogp/ogp.png")
+  meta(property="og:url", content=url_for(page.path))
+  meta(property="og:image", content="https://oldbigbuddha.dev/images/ogp/ogp.png")
 
   meta(property="fb:app_id", content="2154307747924530")
 
   meta(name="twitter:card", content="summary")
-  meta(name="twitter:creator", content="@OJI_1941")
-  meta(name="twitter:image", content="https://blog.oldbigbuddha.net/images/ogp/twitter.png")
+  meta(name="twitter:creator", content="@OldBigBuddha")
+  meta(name="twitter:image", content="https://oldbigbuddha.dev/images/ogp/twitter.png")
 
   block title
 
   link(rel="stylesheet", href=url_for("/css/lib/ress.min.css"))
-
-  //- link(rel="stylesheet", href=url_for("/css/lib/fontawesome-free-5.12.1-all.min.css"))
-
-  if page.code === true
-    link(rel="stylesheet", href=url_for("/css/font.css"))
-
   link(rel="stylesheet", href=url_for("/css/base.css"))
-  link(rel="stylesheet", href=url_for("/css/component/header.css"))
-  link(rel="stylesheet", href=url_for("/css/component/footer.css"))
-  link(rel="stylesheet", href=url_for("/css/component/paginator.css"))
 
   block style
 
