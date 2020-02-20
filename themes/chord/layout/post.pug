@@ -17,7 +17,11 @@ block content
       h1.post__title= page.title
       .post__date= page.date.format(config.date_format)
 
-      script(data-ad-client='ca-pub-2427798032219417', async, src='https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js')
+      //- 【Simple is Best】上部 - タイトル下
+      ins.adsbygoogle(style='display:inline-block;width:728px;height:90px', data-ad-client='ca-pub-2427798032219417', data-ad-slot='1019140575')
+      script.
+        (adsbygoogle = window.adsbygoogle || []).push({});
+
 
       hr#top
 
@@ -33,7 +37,7 @@ block content
           for tag in page.tags.toArray()
             li: a(href=url_for(tag.path))= tag.name
 
-    // Share ボタン
+    //- Share ボタン
     link(rel="stylesheet", href=url_for("/css/post/share.css"))
     #share
       .button#twitter
@@ -50,6 +54,11 @@ block content
 
   include _include/paginator
 
-  script(data-ad-client='ca-pub-2427798032219417', async , src='https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js')
+  //- 【Simple is Best】下部 - ページネーション下
+  ins.adsbygoogle(style='display:block', data-ad-client='ca-pub-2427798032219417', data-ad-slot='6159786614', data-ad-format='auto', data-full-width-responsive='true')
+  script.
+    (adsbygoogle = window.adsbygoogle || []).push({});
 
   script(src=url_for("/js/share.js"))
+  script.
+    !function(e,t){var n=!1;function o(){!1===n&&(n=!0,e.removeEventListener("scroll",o),e.removeEventListener("mousemove",o),e.removeEventListener("mousedown",o),e.removeEventListener("touchstart",o),e.removeEventListener("keydown",o),function(){var e=t.createElement("script");e.type="text/javascript",e.async=!0,e.dataset.adClient="ca-pub-2427798032219417",e.src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js";var n=t.getElementsByTagName("script")[0];n.parentNode.insertBefore(e,n)}())}e.addEventListener("scroll",o),e.addEventListener("mousemove",o),e.addEventListener("mousedown",o),e.addEventListener("touchstart",o),e.addEventListener("keydown",o),e.addEventListener("load",function(){e.pageYOffset&&o()})}(window,document);
