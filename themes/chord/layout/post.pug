@@ -17,13 +17,7 @@ block content
       h1.post__title= page.title
       .post__date= page.date.format(config.date_format)
 
-      script(src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js", async)
-      ins.adsbygoogle(
-        style="display:inline-block;width:728px;height:90px",
-        data-ad-client="ca-pub-2427798032219417",
-        data-ad-slot="1019140575")
-      script.
-        (adsbygoogle = window.adsbygoogle || []).push({})
+      script(data-ad-client='ca-pub-2427798032219417', async, src='https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js')
 
       hr#top
 
@@ -56,15 +50,6 @@ block content
 
   include _include/paginator
 
-  //- 【Simple is Best】下部 - ページネーション下
-  script(src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js", async)
-  ins.adsbygoogle(
-    style="display:block",
-    data-ad-client="ca-pub-2427798032219417",
-    data-ad-slot="6159786614",
-    data-ad-format="auto",
-    data-full-width-responsive="true")
-  script.
-    (adsbygoogle = window.adsbygoogle || []).push({});
+  script(data-ad-client='ca-pub-2427798032219417', async , src='https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js')
 
   script(src=url_for("/js/share.js"))
