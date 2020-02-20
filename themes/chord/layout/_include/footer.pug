@@ -1,8 +1,12 @@
 link(rel="stylesheet", href=url_for("/css/component/footer.css"))
 footer
+  nav
+    a(href=url_for("/")) Top
+    | ・
+    a(href=url_for("/privacypolicy/")) Privacy Policy
+    | ・
+    a(href=url_for("/archives/")) Archive
   .copyright
     p &copy; 2020 OldBigBuddha.
     p Powered by
       a(href="https://hexo.io")  Hexo.
-    p Theme by
-      a(href="https://github.com/Simlesos/hexo-theme-chord" alt="Chord'sGitHub Repository")  Chord.

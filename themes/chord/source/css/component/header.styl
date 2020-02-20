@@ -1,41 +1,20 @@
+@import "../_variables"
 header
   width 100%
+  background-color $font_color
 
-  .logo
-    a
-      img
-        height 125px
-        text-align center
-
-  h1.title
+  p.title
     width 100%
     text-align center
-    padding 12px
-    font-size 3rem
+    padding-top 8px
+    font-size 2.5rem
     a
-      color #333
+      color $bg_color
 
-  nav.header
+  p.subtitle
     width 100%
-    margin 0 auto
-    background-color #000
-
-    .menu
-      width 100%
-      display flex
-      flex-direction row
-      justify-content space-around
-      .menu__item
-        align-items stretch
-        font-size 2rem
-        list-style none
-        a
-          padding 8px
-          font-size 1.5rem
-          color #fff
-
-@media screen and (max-width: 480px)
-  .header
-    .menu
-      .menu__item
-        margin-left 10px
+    text-align center
+    padding-bottom 8px
+    font-size 1.3rem
+    font-style italic
+    color $bg_color
