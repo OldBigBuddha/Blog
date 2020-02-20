@@ -12,6 +12,7 @@
   "dependencies": {
     "hexo": "^4.2.0",
     "hexo-autoprefixer": "^2.0.0",
+    "hexo-browsersync": "^0.3.0",
     "hexo-clean-css": "^1.0.0",
     "hexo-generator-archive": "^1.0.0",
     "hexo-generator-category": "^1.0.0",
