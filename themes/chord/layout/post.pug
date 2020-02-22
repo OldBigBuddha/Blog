@@ -37,20 +37,7 @@ block content
           for tag in page.tags.toArray()
             li: a(href=url_for(tag.path))= tag.name
 
-    //- Share ボタン
-    link(rel="stylesheet", href=url_for("/css/post/share.css"))
-    #share
-      .button#twitter
-        i.fab.fa-twitter
-      .button#facebook
-        i.fab.fa-facebook
-      .button#hatebu
-        img(src=url_for("/images/hatenabookmark.svg"))
-      .button#link
-        i.fas.fa-link
-
-    #notification
-      p URLをクリップボードにコピーしました。
+  include _include/share
 
   include _include/paginator
 
