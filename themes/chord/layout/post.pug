@@ -4,12 +4,11 @@ block title
   title= `${page.title} | ${config.title}`
 
 block style
-  link(rel="stylesheet", href=url_for("/css/post/post.css"))
-  //- script(src='https://kit.fontawesome.com/da314288dc.js', crossorigin='anonymous')
+  link(rel="stylesheet", href=url_for("/css/post/post.css"), media="print", onload="this.media='all'")
 
   if page.code === true
-    link(rel="stylesheet", href=url_for("/css/font.css"))
-    link(rel="stylesheet", href=url_for("/css/post/syntax_highlight.css"))
+    link(rel="stylesheet", href=url_for("/css/font.css"), media="print", onload="this.media='all'")
+    link(rel="stylesheet", href=url_for("/css/post/syntax_highlight.css"), media="print", onload="this.media='all'")
 
 block content
   main
@@ -29,7 +28,7 @@ block content
 
       hr
 
-    link(rel="stylesheet", href=url_for("/css/component/tag.css"))
+    link(rel="stylesheet", href=url_for("/css/component/tag.css"), media="print", onload="this.media='all'")
     if page.tags
       .post__tags
         p#tags__title Tags
