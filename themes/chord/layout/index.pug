@@ -14,6 +14,7 @@ block content
         a.posts--post-wrapper(href=url_for(post.path))
           section.post
             .post--eye-catch
+              .eye-catch--year= post.date.format("YYYY")
               .eye-catch--month.eyecatch--text= post.date.format("MM")
               .eye-catch--day.eyecatch--text= post.date.format("DD")
             .post--content
