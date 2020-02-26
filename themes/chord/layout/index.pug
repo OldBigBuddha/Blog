@@ -23,7 +23,8 @@ block content
             //-     ul
             //-       for tag in post.tags.toArray()
             //-         li: a(href=url_for(tag.path))= tag.name
-  hr
+  hr#index--hr
 
 block pagination
-  include _include/paginator
+  #index--pagination
+    include _include/paginator
