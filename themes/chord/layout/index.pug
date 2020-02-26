@@ -9,20 +9,22 @@ block style
 
 block content
   div.content__index
-    .posts.typo
+    .posts
       for post in page.posts.toArray()
-          .post
-            h2.post__title
-              a(href=url_for(post.path))
-                = post.title
-            .post__date= post.date.format(config.date_format)
-            if post.tags
-              .post__tags
-                ul
-                  for tag in post.tags.toArray()
-                    li: a(href=url_for(tag.path))= tag.name
-
-  hr
+        a.posts--post-wrapper(href=url_for(post.path))
+          section.post
+            .post--eye-catch
+              .eye-catch--month.eyecatch--text= post.date.format("MM")
+              .eye-catch--day.eyecatch--text= post.date.format("DD")
+            .post--content
+              .content--title= post.title
+            //- if post.tags
+            //-   .post__tags
+            //-     ul
+            //-       for tag in post.tags.toArray()
+            //-         li: a(href=url_for(tag.path))= tag.name
+  hr#index--hr
 
 block pagination
-  include _include/paginator
+  #index--pagination
+    include _include/paginator
