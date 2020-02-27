@@ -1,13 +1,17 @@
 extends _include/layout
 
 block title
-  title= config.title
+  if is_tag()
+    title= page.tag + " | " + config.title
+  else if is_archive()
+    title= __('archive') + " | " + config.title
 
 block style
-  link(rel="stylesheet", href=url_for("/css/index.css"))
+  link(rel="stylesheet", href=url_for("/css/tag-page.css"))
 
 block content
-  main.content--index
+  main.content--tag-page
+    h1#tag-page--title Tag: #{page.tag}
     .posts
       for post in page.posts.toArray()
           section.post
