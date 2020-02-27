@@ -12,17 +12,15 @@ header
   flex-wrap wrap
   justify-content center
 
-.posts--post-wrapper
-  margin 20px
-
 .post
   width 350px
   background #fff
   border-radius 5px
   box-shadow 0 2px 5px #ccc
+  margin 20px
 
   &:hover
-    box-shadow 0 10px 20px -5px rgba(0,0,0,.2)
+    box-shadow 0 10px 20px -5px rgba(0,0,0,.4)
     transform translateY(-2px)
     transition-duration 0.3s
 
@@ -54,7 +52,6 @@ header
 
 .post--content
   padding 20px
-  height 110px
 
 .content--title
     font-size 20px
@@ -63,6 +60,35 @@ header
     overflow hidden
     white-space nowrap
     text-overflow ellipsis
+
+.post--tags
+  list-style none
+  padding-left .5em
+  display flex
+
+.tags--tag
+  margin-right .3em
+
+.tag--link
+  display inline-block
+  max-width 100px
+  height 28px
+  line-height 28px
+  padding 0 1em
+  background-color #fff
+  border 1px solid #aaa
+  border-radius 3px
+  white-space nowrap
+  text-overflow ellipsis
+  overflow hidden
+  color #333
+  font-size 13px
+  text-decoration none
+  transition .2s
+  &:hover
+    background-color #333
+    color #fff
+    color $selection_color
 
 #index--hr
   margin 0 80px

@@ -11,19 +11,17 @@ block content
   div.content__index
     .posts
       for post in page.posts.toArray()
-        a.posts--post-wrapper(href=url_for(post.path))
           section.post
-            .post--eye-catch
+            a.post--link-wrapper(href=url_for(post.path)): .post--eye-catch
               .eye-catch--year= post.date.format("YYYY")
               .eye-catch--month.eyecatch--text= post.date.format("MM")
               .eye-catch--day.eyecatch--text= post.date.format("DD")
-            .post--content
+            a.post--link-wrapper(href=url_for(post.path)): .post--content
               .content--title= post.title
-            //- if post.tags
-            //-   .post__tags
-            //-     ul
-            //-       for tag in post.tags.toArray()
-            //-         li: a(href=url_for(tag.path))= tag.name
+            if post.tags
+              ul.post--tags
+                for tag in post.tags.toArray()
+                  li.tags--tag: a.tag--link(href=url_for(tag.path))= tag.name
   hr#index--hr
 
 block pagination
