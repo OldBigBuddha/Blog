@@ -104,5 +104,3 @@ clean_css:
 autoprefixer:
   exclude:
     - '*.min.css'
-  browsers:
-    - 'last 2 versions'
