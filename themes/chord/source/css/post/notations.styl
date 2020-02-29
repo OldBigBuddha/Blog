@@ -93,7 +93,25 @@ article.content__post
       background-color rgba(0,0,0,.03)
       border-radius 3px
 
-@media screen and (max-width: 959px)
+    // 表
+    table
+      border-collapse collapse
+      border 1px solid #ccc
+      line-height 1.5
+    th
+      padding 10px
+      font-weight bold
+      vertical-align top
+      border 1px solid #ccc
+      border-bottom 3px solid #ccc
+    td
+      padding 10px
+      vertical-align top
+      border 1px solid #ccc
+    tr:nth-child(even)
+      background #DDFEE4
+
+@media screen and (max-width 959px)
   article.content__post
     hr#top
       margin-bottom 1.5em
