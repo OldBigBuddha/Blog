@@ -92,10 +92,8 @@ pagination_dir: page
 ## Themes: https://hexo.io/themes/
 theme: chord
 
-# Deployment
-## Docs: https://hexo.io/docs/deployment.html
-deploy:
-  type:
+include:
+  - ".well-known/*"
 
 clean_css:
   exclude:
