@@ -1,0 +1,4 @@
+This is a Brave Rewards publisher verification file.
+
+Domain: oldbigbuddha.dev
+Token: 9101ed5131f6b26d503b9e56f8d74e121cf77b1d0aa729231fb8351a5bd6f0b9
