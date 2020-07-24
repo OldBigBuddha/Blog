@@ -25,6 +25,6 @@
     "hexo-server": "1.0.0"
   },
   "devDependencies": {
-    "netlify-lambda": "1.6.3"
+    "netlify-lambda": "2.0.1"
   }
 }
