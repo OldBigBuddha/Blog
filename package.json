@@ -10,7 +10,7 @@
     "version": "4.2.1"
   },
   "dependencies": {
-    "hexo": "4.2.1",
+    "hexo": "5.1.0",
     "hexo-autoprefixer": "2.0.0",
     "hexo-browsersync": "0.3.0",
     "hexo-clean-css": "1.0.0",
