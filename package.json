@@ -7,7 +7,7 @@
     "build:func": "netlify-lambda build functions-src"
   },
   "hexo": {
-    "version": "5.1.0"
+    "version": "5.2.0"
   },
   "dependencies": {
     "hexo": "5.2.0",
@@ -16,7 +16,7 @@
     "hexo-clean-css": "1.0.0",
     "hexo-generator-feed": "3.0.0",
     "hexo-generator-index": "2.0.0",
-    "hexo-generator-seo-friendly-sitemap": "0.0.25",
+    "hexo-generator-seo-friendly-sitemap": "0.1.1",
     "hexo-generator-tag": "1.0.0",
     "hexo-html-minifier": "1.0.0",
     "hexo-render-pug": "2.1.4",
