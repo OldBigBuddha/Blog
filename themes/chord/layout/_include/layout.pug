@@ -4,10 +4,10 @@ doctype
 html(lang=config.language)
   include ./head.pug
   body
-    #wrapper
+    div.flex.flex-col.min-h-full
       include ./header.pug
 
-      section.content
+      section(class=" w-screen md:w-3/5 mx-2 md:mx-auto")
         block content
         block pagination
 
