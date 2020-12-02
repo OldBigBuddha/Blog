@@ -31,10 +31,10 @@ block content
     link(rel="stylesheet", href=url_for("/css/component/tag.css"), media="print", onload="this.media='all'")
     if page.tags
       .post__tags
-        p#tags__title Tags
-        ul
+        p.mb-2 Tags
+        ul.m-0.p-0.list-none
           for tag in page.tags.toArray()
-            li: a(href=url_for(tag.path))= tag.name
+            li.inline-block.mx-1.p-0.cursor-pointer: a(class="inline-block h-7 max-w-xs px-4 bg-white rounded-full border border-solid border-gray-500 leading-7 text-sm text-gray-900 no-underline truncate duration-200 hover:bg-gray-600 hover:text-gray-200" href=url_for(tag.path))= tag.name
 
   include _include/share
 
