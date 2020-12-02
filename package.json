@@ -3,7 +3,9 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
+    "dev": "hexo s",
     "dev:func": "netlify-lambda serve ./functions-src --port 9001",
+    "build": "hexo clean && hexo g",
     "build:func": "netlify-lambda build functions-src"
   },
   "hexo": {
@@ -16,12 +18,13 @@
     "hexo-clean-css": "1.0.0",
     "hexo-generator-feed": "3.0.0",
     "hexo-generator-index": "2.0.0",
-    "hexo-generator-seo-friendly-sitemap": "0.1.1",
+    "hexo-generator-seo-friendly-sitemap": "0.2.0",
     "hexo-generator-tag": "1.0.0",
     "hexo-html-minifier": "1.0.0",
     "hexo-render-pug": "2.1.4",
     "hexo-renderer-marked": "3.3.0",
     "hexo-renderer-stylus": "2.0.1",
+    "hexo-renderer-tailwindcss": "^1.0.1",
     "hexo-server": "2.0.0"
   },
   "devDependencies": {
