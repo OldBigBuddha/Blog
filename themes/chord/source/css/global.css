@@ -1,3 +1,36 @@
 @import "tailwindcss/base";
 @import "tailwindcss/components";
 @import "tailwindcss/utilities";
+
+/* Customize Base */
+@layer base {
+  @font-face {
+    font-family: RictyDiminished;
+    font-weight: 400;
+    src: url("../fonts/RictyDiminished-with-FiraCode-Regular.woff")
+      format("woff");
+  }
+
+  body {
+    @apply h-screen;
+    @apply w-screen;
+
+    font-family: fot-tsukubrdgothic-std, sans-serif;
+    @apply font-normal;
+
+    @apply bg-gray-100;
+    @apply text-gray-700;
+  }
+
+  a {
+    @apply font-bold;
+    @apply text-green-600;
+  }
+
+  img {
+    @apply max-w-full;
+    @apply py-2;
+    @apply m-auto;
+    @apply block;
+  }
+}
