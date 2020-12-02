@@ -1,18 +1,17 @@
 if page.prev || page.next
-  link(rel="stylesheet", href=url_for("/css/component/paginator.css"), media="print", onload="this.media='all'")
-  #paginator
+  div.flex.justify-between.mt-4
     if page.layout === "post"
       if page.prev
-        #newer
-          a(href=url_for(page.prev_link || page.prev.path))= page.prev.title
+        div
+          a(class="hover:text-green-600 hover:underline" href=url_for(page.prev_link || page.prev.path))= page.prev.title
       if page.next
-        #older
-          a(href=url_for(page.next_link || page.next.path))= page.next.title
+        div.ml-auto
+          a(class="hover:text-green-600 hover:underline" href=url_for(page.next_link || page.next.path))= page.next.title
     else
       if page.prev
-        #newer
+        div
           a(href=url_for(page.prev_link || page.prev.path)) 新しい記事へ
 
       if page.next
-        #older
+        div.ml-auto
           a(href=url_for(page.next_link || page.next.path)) 古い記事へ

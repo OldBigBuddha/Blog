@@ -12,9 +12,9 @@ block style
 
 block content
   main
-    article.content__post
-      h1.post__title= page.title
-      .post__date= page.date.format(config.date_format)
+    article.content__post.mt-4
+      h1.text-center.text-4xl= page.title
+      div.text-center.mb-4= page.date.format(config.date_format)
 
       //- 【Simple is Best】上部 - タイトル下
       ins.adsbygoogle(style='display:inline-block;width:728px;height:90px', data-ad-client='ca-pub-2427798032219417', data-ad-slot='1019140575')
