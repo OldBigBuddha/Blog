@@ -15,6 +15,7 @@
     "hexo": "5.2.0",
     "hexo-autoprefixer": "2.0.0",
     "hexo-browsersync": "0.3.0",
+    "hexo-clean-css": "1.0.0",
     "hexo-generator-feed": "3.0.0",
     "hexo-generator-index": "2.0.0",
     "hexo-generator-seo-friendly-sitemap": "0.2.0",
@@ -24,7 +25,6 @@
     "hexo-renderer-marked": "3.3.0",
     "hexo-renderer-stylus": "2.0.1",
     "hexo-renderer-tailwindcss": "^1.0.1",
-    "hexo-clean-css": "1.0.0",
     "hexo-server": "2.0.0"
   },
   "devDependencies": {

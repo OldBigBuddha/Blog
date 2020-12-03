@@ -1,0 +1,44 @@
+p {
+  text-indent: 1rem;
+}
+
+h1,
+h2,
+h3 {
+  @apply my-4;
+}
+
+h2 {
+  @apply text-2xl;
+  @apply text-gray-700;
+
+  @apply border-b-2;
+  @apply border-solid;
+  @apply border-gray-700;
+
+  @apply mt-8;
+  @apply pl-2;
+}
+
+h2::before {
+  content: "#";
+
+  @apply mr-2;
+}
+
+h3 {
+  @apply text-xl;
+  @apply text-gray-700;
+
+  @apply border-b-2;
+  @apply border-solid;
+  @apply border-gray-700;
+
+  @apply pl-4;
+}
+
+h3::before {
+  content: "##";
+
+  @apply mr-2;
+}

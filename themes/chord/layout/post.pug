@@ -4,6 +4,7 @@ block title
   title= `${page.title} | ${config.title}`
 
 block style
+  link(rel="stylesheet", href=url_for("/css/post.css"), media="print", onload="this.media='all'")
   link(rel="stylesheet", href=url_for("/css/post/post.css"), media="print", onload="this.media='all'")
 
   if page.code === true
